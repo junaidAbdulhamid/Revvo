@@ -1,5 +1,6 @@
 import { LogoMark } from "./Logo";
 import Button from "./ui/Button";
+import { BOOKING_URL } from "@/content/site";
 
 /** The "Talk with …" card from the reference, pointing at the consultation booking section. */
 export default function BookingCard({ className = "" }: { className?: string }) {
@@ -15,7 +16,7 @@ export default function BookingCard({ className = "" }: { className?: string }) 
           <p className="text-[18px] tracking-[-0.04em]">Talk with Revvo</p>
           <p className="mono-label mt-1 text-muted">Free 30-min call</p>
         </div>
-        <Button href="/#book" variant="primary" className="mt-3 !px-3 !py-2.5">
+        <Button href={BOOKING_URL} variant="primary" className="mt-3 !px-3 !py-2.5">
           Book consultation
         </Button>
       </div>

@@ -38,7 +38,7 @@ export default function CalendlyEmbed() {
   }
 
   return (
-    <div className="relative h-[700px] w-full overflow-hidden rounded-xl" data-lenis-prevent>
+    <div className="relative h-[780px] w-full overflow-hidden rounded-xl" data-lenis-prevent>
       <p className="mono-label absolute inset-0 flex items-center justify-center text-muted">Loading calendar…</p>
       <div ref={ref} className="relative h-full w-full" />
       <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" onReady={init} />

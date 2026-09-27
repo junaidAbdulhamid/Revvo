@@ -3,7 +3,7 @@
 import Button from "../ui/Button";
 import { Container, Icon, RidgeArt } from "../ui/common";
 import { Reveal, SplitText, Tag } from "../ui/motion";
-import { INCLUDED } from "@/content/site";
+import { BOOKING_URL, INCLUDED } from "@/content/site";
 
 const ICONS = ["star", "phone", "refresh", "wrench"] as const;
 
@@ -21,7 +21,7 @@ export default function Included() {
               </p>
             </Reveal>
             <Reveal delay={0.3} className="mt-2">
-              <Button href="/#book" variant="primary">
+              <Button href={BOOKING_URL} variant="primary">
                 Book Free Consultation
               </Button>
             </Reveal>

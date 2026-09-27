@@ -4,8 +4,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
 import Logo from "./Logo";
-import Button from "./ui/Button";
-import { NAV } from "@/content/site";
+import Button, { linkTarget } from "./ui/Button";
+import { BOOKING_URL, NAV } from "@/content/site";
 
 export default function Header() {
   const { scrollY } = useScroll();
@@ -40,7 +40,7 @@ export default function Header() {
           ))}
         </nav>
         <div className="hidden md:block">
-          <Button href="/#book" arrow={false}>
+          <Button href={BOOKING_URL} arrow={false}>
             Book Free Consultation
           </Button>
         </div>
@@ -67,7 +67,7 @@ export default function Header() {
                 {n.label}
               </Link>
             ))}
-            <Link href="/#book" onClick={() => setOpen(false)} className="mt-3 rounded-lg bg-white py-3 text-center text-sm font-medium text-ink">
+            <Link href={BOOKING_URL} {...linkTarget(BOOKING_URL)} onClick={() => setOpen(false)} className="mt-3 rounded-lg bg-white py-3 text-center text-sm font-medium text-ink">
               Book Free Consultation
             </Link>
           </motion.nav>

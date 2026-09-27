@@ -2,8 +2,12 @@
 // Anything marked TODO is a placeholder that must be replaced with real information before launch.
 
 // TODO: paste your real Calendly event link (e.g. "https://calendly.com/your-name/consultation").
-// While empty, the booking section shows an "email us" fallback instead of a calendar.
-export const CALENDLY_URL = "";
+// Once set, every "Book" button opens it in a new tab and the booking section embeds the calendar.
+// While empty, buttons scroll to the booking section, which shows an "email us" fallback.
+export const CALENDLY_URL = "https://calendly.com/junaidabdulhamid/free-consultation";
+
+// Where every "Book consultation" button points.
+export const BOOKING_URL = CALENDLY_URL || "/#book";
 
 export const CONTACT = {
   email: "junaidabdulhamid@gmail.com",

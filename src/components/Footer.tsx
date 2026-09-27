@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Logo, { LogoMark } from "./Logo";
-import Button from "./ui/Button";
-import { CONTACT, NAV } from "@/content/site";
+import Button, { linkTarget } from "./ui/Button";
+import { BOOKING_URL, CONTACT, NAV } from "@/content/site";
 
 export default function Footer() {
   return (
@@ -31,7 +31,7 @@ export default function Footer() {
               </li>
             ))}
             <li>
-              <Link href="/book" className="transition-colors hover:text-muted">Book a Consultation</Link>
+              <Link href={BOOKING_URL} {...linkTarget(BOOKING_URL)} className="transition-colors hover:text-muted">Book a Consultation</Link>
             </li>
           </ul>
         </div>
@@ -51,7 +51,7 @@ export default function Footer() {
           </div>
           <div>
             <p className="mono-label text-muted">Ready when you are</p>
-            <Button href="/#book" variant="primary" className="mt-3">
+            <Button href={BOOKING_URL} variant="primary" className="mt-3">
               Book Free Consultation
             </Button>
           </div>

@@ -3,6 +3,10 @@ import type { ReactNode } from "react";
 
 type Variant = "primary" | "secondary";
 
+/** Opens absolute (off-site) links, like the Calendly booking page, in a new tab. */
+export const linkTarget = (href: string) =>
+  /^https?:\/\//.test(href) ? { target: "_blank", rel: "noopener noreferrer" } : {};
+
 const styles: Record<Variant, string> = {
   primary: "bg-white text-ink hover:bg-[#e6e6e6]",
   secondary: "bg-surface text-white border border-line hover:bg-raised",
@@ -33,6 +37,7 @@ export default function Button({
   return (
     <Link
       href={href}
+      {...linkTarget(href)}
       className={`group inline-flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-medium tracking-[-0.02em] transition-colors duration-400 ${styles[variant]} ${className}`}
     >
       <span className="relative block h-[1.1em] overflow-hidden leading-[1.1em]">

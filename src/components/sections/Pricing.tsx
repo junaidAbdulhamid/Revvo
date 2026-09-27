@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "motion/react";
 import Button from "../ui/Button";
 import { Container, Icon, SectionHeading } from "../ui/common";
 import { Reveal } from "../ui/motion";
-import { PRICING } from "@/content/site";
+import { BOOKING_URL, PRICING } from "@/content/site";
 
 export default function Pricing() {
   const [yearly, setYearly] = useState(false);
@@ -74,7 +74,7 @@ export default function Pricing() {
                   </div>
                   <p className="mono-label mt-2 h-4 text-muted">{yearly ? "Billed yearly" : "Billed monthly"}</p>
 
-                  <Button href="/#book" variant={p.popular ? "primary" : "secondary"} arrow={false} className="mt-8 w-full">
+                  <Button href={BOOKING_URL} variant={p.popular ? "primary" : "secondary"} arrow={false} className="mt-8 w-full">
                     {p.cta}
                   </Button>
                   <p className="mt-4 flex items-center justify-center gap-2 text-[14px] text-white/80">

@@ -6,7 +6,7 @@ import { AUTOMATION_MOCKS } from "../mocks";
 import Button from "../ui/Button";
 import { useRange } from "../ui/motion";
 import { Container, Icon, SectionHeading } from "../ui/common";
-import { AUTOMATIONS, type Automation } from "@/content/site";
+import { AUTOMATIONS, BOOKING_URL, type Automation } from "@/content/site";
 
 function Card({ a, i, total, progress }: { a: Automation; i: number; total: number; progress: MotionValue<number> }) {
   // As later cards slide over this one, it shrinks and dims into a deck
@@ -35,7 +35,7 @@ function Card({ a, i, total, progress }: { a: Automation; i: number; total: numb
             <h3 className="h-card">{a.title}</h3>
             <p className="max-w-[480px] text-[17px] leading-[1.45] tracking-[-0.03em] text-muted">{a.description}</p>
             <div>
-              <Button href="/#book">See it for your business</Button>
+              <Button href={BOOKING_URL}>See it for your business</Button>
             </div>
           </div>
           <div className="mt-8 grid grid-cols-2 gap-6 border-t border-line pt-6">
