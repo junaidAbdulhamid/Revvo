@@ -39,13 +39,13 @@ export default function Footer() {
         <div className="flex flex-col gap-8">
           <div>
             <p className="mono-label text-muted">Email</p>
-            <a href={`mailto:${CONTACT.email}`} className="mt-3 block text-[28px] tracking-[-0.05em] transition-colors hover:text-muted md:text-[32px]">
+            <a href={`mailto:${CONTACT.email}`} className="mt-3 block break-all text-[22px] tracking-[-0.05em] transition-colors hover:text-muted lg:text-[26px]">
               {CONTACT.email}
             </a>
           </div>
           <div>
             <p className="mono-label text-muted">Phone</p>
-            <a href={`tel:${CONTACT.phone.replace(/[^+\d]/g, "")}`} className="mt-3 block text-[18px] tracking-[-0.03em] transition-colors hover:text-muted">
+            <a href={`tel:+1${CONTACT.phone.replace(/\D/g, "")}`} className="mt-3 block text-[18px] tracking-[-0.03em] transition-colors hover:text-muted">
               {CONTACT.phone}
             </a>
           </div>

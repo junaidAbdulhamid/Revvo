@@ -6,8 +6,8 @@
 export const CALENDLY_URL = "";
 
 export const CONTACT = {
-  email: "hello@revvo.ai", // TODO: your real email
-  phone: "+1 (555) 000-0000", // TODO: your real phone number
+  email: "junaidabdulhamid@gmail.com",
+  phone: "(571) 435-3507",
 };
 
 export const NAV = [
