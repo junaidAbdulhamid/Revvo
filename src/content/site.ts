@@ -183,31 +183,35 @@ export const COMPARISON = {
   ] as { label: string; values: ["ok" | "warn" | "x", string][] }[],
 };
 
-// TODO: replace these with real client testimonials before launch.
-// Do not publish invented quotes; keep this list empty to hide the section.
-export const TESTIMONIALS = [
+// Businesses that use Revvo, shown in the "Trusted by" section.
+// Preview images are homepage screenshots stored in /public/clients.
+export const CLIENTS = [
   {
-    quote:
-      "Placeholder: replace with a real quote from a client about the AI Review Agent and the reviews it brought in.",
-    name: "Client Name",
-    role: "OWNER, BUSINESS NAME",
-    initials: "CN",
+    name: "Cyprus Air Heating & Air Conditioning",
+    industry: "HVAC",
+    location: "Alexandria, VA",
+    url: "https://indoorcomfort.com/",
+    image: "/clients/cyprus-air.jpg",
   },
   {
-    quote:
-      "Placeholder: replace with a real quote from a client about the AI Receptionist answering calls and booking jobs.",
-    name: "Client Name",
-    role: "OWNER, BUSINESS NAME",
-    initials: "CN",
+    name: "Parrish Services",
+    industry: "HVAC, PLUMBING & ELECTRICAL",
+    location: "Manassas, VA",
+    url: "https://parrishservices.com/",
+    image: "/clients/parrish-services.jpg",
   },
   {
-    quote:
-      "Placeholder: replace with a real quote from a client about revenue recovered from old leads.",
-    name: "Client Name",
-    role: "OWNER, BUSINESS NAME",
-    initials: "CN",
+    name: "Smileville Dental",
+    industry: "FAMILY DENTISTRY",
+    location: "Alexandria & Sterling, VA",
+    url: "https://www.mysmileville.com/",
+    image: "/clients/smileville-dental.jpg",
   },
 ];
+
+// Real client quotes only. While this list is empty, the quote carousel is hidden.
+// Example entry: { quote: "...", name: "Jane Smith", role: "OWNER, SMILEVILLE DENTAL", initials: "JS" }
+export const TESTIMONIALS: { quote: string; name: string; role: string; initials: string }[] = [];
 
 // Count-up numbers shown under the testimonials.
 export const STATS = [

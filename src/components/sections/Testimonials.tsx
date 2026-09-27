@@ -1,10 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { useRef, useState } from "react";
 import { animate } from "motion/react";
 import { Container, RidgeArt } from "../ui/common";
 import { CountUp, Reveal, SplitText, Tag } from "../ui/motion";
-import { STATS, TESTIMONIALS } from "@/content/site";
+import { CLIENTS, STATS, TESTIMONIALS } from "@/content/site";
 
 function Arrow({ dir, onClick, disabled }: { dir: "prev" | "next"; onClick: () => void; disabled: boolean }) {
   return (
@@ -35,9 +36,61 @@ export default function Testimonials() {
   return (
     <section className="overflow-hidden py-[100px]">
       <Container>
+        {CLIENTS.length > 0 && (
+          <>
+            <div className="flex flex-col items-start gap-4">
+              <Tag>OUR CLIENTS</Tag>
+              <SplitText lines={["Trusted by Local Businesses"]} className="h-section" />
+            </div>
+            <div className="mt-12 grid gap-6 md:grid-cols-3">
+              {CLIENTS.map((c, i) => (
+                <Reveal key={c.name} delay={i * 0.1} y={30} className="h-full">
+                  <a
+                    href={c.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex h-full flex-col rounded-xl border border-line bg-surface p-2 transition-colors duration-500 hover:border-white/25"
+                  >
+                    <div className="overflow-hidden rounded-lg border border-line bg-ink">
+                      <div className="flex items-center gap-1.5 border-b border-line px-3 py-2">
+                        {[0, 1, 2].map((d) => (
+                          <span key={d} className="h-2 w-2 rounded-full bg-white/20" />
+                        ))}
+                        <span className="mono-label ml-2 truncate text-[10px] text-white/40">
+                          {new URL(c.url).hostname.replace(/^www\./, "")}
+                        </span>
+                      </div>
+                      <div className="relative aspect-[16/10] overflow-hidden">
+                        <Image
+                          src={c.image}
+                          alt={`${c.name} website`}
+                          fill
+                          sizes="(min-width: 768px) 33vw, 100vw"
+                          className="object-cover object-top grayscale transition-[filter,transform] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03] group-hover:grayscale-0"
+                        />
+                      </div>
+                    </div>
+                    <div className="flex flex-1 items-end justify-between gap-4 px-3 pb-3 pt-5">
+                      <div>
+                        <p className="text-[20px] leading-[1.2] tracking-[-0.04em]">{c.name}</p>
+                        <p className="mono-label mt-2 text-muted">
+                          {c.industry} · {c.location}
+                        </p>
+                      </div>
+                      <svg viewBox="0 0 16 16" className="mb-1 h-4 w-4 shrink-0 text-muted transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white" aria-hidden="true">
+                        <path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" strokeWidth="1.5" />
+                      </svg>
+                    </div>
+                  </a>
+                </Reveal>
+              ))}
+            </div>
+          </>
+        )}
+
         {TESTIMONIALS.length > 0 && (
           <>
-            <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
+            <div className="mt-20 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
               <div className="flex flex-col items-start gap-4">
                 <Tag>TESTIMONIALS</Tag>
                 <SplitText lines={["Hear From Our Clients"]} className="h-section" />
