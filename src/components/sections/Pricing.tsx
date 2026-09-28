@@ -31,7 +31,6 @@ export default function Pricing() {
                   <motion.span layoutId="billing-pill" className="absolute inset-0 -z-10 rounded-lg bg-white" transition={{ type: "spring", bounce: 0.2, duration: 0.5 }} />
                 )}
                 {opt.label}
-                {opt.value && <span className="mono-label rounded bg-raised px-1.5 py-0.5 text-[11px] text-white">-20%</span>}
               </button>
             ))}
           </div>
@@ -70,7 +69,7 @@ export default function Pricing() {
                         </motion.span>
                       </AnimatePresence>
                     </span>
-                    <span className="mb-1 ml-1 text-[18px] tracking-[-0.03em] text-muted">/mo</span>
+                    <span className="mb-1 ml-1 text-[18px] tracking-[-0.03em] text-muted">{yearly ? "/yr" : "/mo"}</span>
                   </div>
                   <p className="mono-label mt-2 h-4 text-muted">{yearly ? "Billed yearly" : "Billed monthly"}</p>
 

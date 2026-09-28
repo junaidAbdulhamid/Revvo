@@ -225,14 +225,14 @@ export const STATS = [
   { value: 100, suffix: "%", label: "DONE FOR YOU" },
 ];
 
-// TODO: set your real prices. yearly = monthly price when billed yearly.
+// Prices in USD. monthly = per month; yearly = total per year when billed yearly.
 export const PRICING = [
   {
     name: "Starter",
     icon: "star",
     description: "One automation to plug your biggest leak",
     monthly: 297,
-    yearly: 237,
+    yearly: 3500,
     popular: false,
     cta: "Choose Starter",
     features: [
@@ -248,7 +248,7 @@ export const PRICING = [
     icon: "phone",
     description: "Two automations working together",
     monthly: 597,
-    yearly: 477,
+    yearly: 8000,
     popular: true,
     cta: "Choose Growth",
     features: [
@@ -264,7 +264,7 @@ export const PRICING = [
     icon: "bolt",
     description: "All three automations, fully managed",
     monthly: 897,
-    yearly: 717,
+    yearly: 12000,
     popular: false,
     cta: "Choose Full Revvo",
     features: [
@@ -296,7 +296,7 @@ export const FAQ = [
   },
   {
     q: "Is there a long-term contract?",
-    a: "Plans are billed monthly and you can cancel anytime. Yearly billing is available at a discount.",
+    a: "Plans are billed monthly and you can cancel anytime. Yearly billing is also available.",
   },
   {
     q: "How do I get started?",
